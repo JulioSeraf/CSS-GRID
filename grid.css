@@ -58,3 +58,34 @@ html {
     background-color: #666;
     border: medium solid #999;
   }
+  /* Grid Explicito */
+  .grid-explicit{
+    /* ativamos el grid con el display */
+    display: grid;
+    /* para ativar las culunas y filas usamos grid-template-column y grid-template-row que pueder reciber como valor de medida tanto %, px , rem y fr(fraciones) */
+    /* Esta es una grid de (3c x 3r) */
+    grid-template-rows: 2rem 20vh 30%;
+    grid-template-columns: 50% 100px 1fr;
+
+    /* para formar una quadricula mais rapidamente usamos la function repeat()que recibe com primer paramentro el numero neste caso de columnas y como el segundo el tamaño que tendera estas colunas  */
+    /* esta es una grid de(5c x 4r) */
+    grid-template-columns: repeat(5,20%);
+    grid-template-rows: repeat(4,25%);
+        /* intercanbiar auto/25% */
+    grid-template-rows: repeat(4,auto);
+    /* la fr(fracion) dive las filas y colunas en proporciones iguales, pero repeta el contenido del item */
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(4,1fr);
+
+    /* podemos usar el reater par definer en medio de otras medidas */
+    /* Grid de (4c x 5r) */
+    grid-template-columns:20% repeat(2,30%) 20%;
+    grid-template-rows:repeat(5,auto);
+
+    /* Tenemos las propriedade row-gap y column-gap que tiene como shorthand gap: para colocarmos espacios ente colunas y filar, seria como un margin dentro de grid */
+    column-gap: 1rem;
+    row-gap: 2px;
+    /* gap: row column */
+    gap: 1vh 1vw;
+    gap:0%;
+  }
