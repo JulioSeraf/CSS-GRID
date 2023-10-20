@@ -176,5 +176,19 @@ html {
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(3,200px);
     /* aqui tenemos una grid de 4 x 3 = 12, pero como nuestro contener aberga 19 item lo sobrante seria 7 item estos item no estariam en la definicion de column/row de la grid, lo que serian grid implicita */
+  }
 
+  .grid-flow{
+    display: grid;
+    /* Grid 5c x 3r */
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows:repeat(3,150px);
+
+    /* El grid-auto-flow cambia el flujo de la grid , su valor por defecto es row, pero tambien le podemos asignar column, */
+    grid-auto-flow:row;
+    grid-auto-flow: column;
+
+    /* la propriedad grid-auto-rows es la que usamos para asignar a los elementos que esta inplicitos a la grid un ancho y si usamos el grid-auto-columns asignamos a los elemetos implicitos de la grid una altura, el valor poder defecto es auto*/
+    grid-auto-rows: 100px;
+    grid-auto-columns: auto;
   }
