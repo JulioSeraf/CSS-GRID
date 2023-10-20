@@ -170,3 +170,11 @@ html {
     /* footer ocupando 2 column y 1 row */
     grid-area: footer;
   }
+  .grid-implicit{
+    display: grid;
+    /* grid 4c x 3r */
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,200px);
+    /* aqui tenemos una grid de 4 x 3 = 12, pero como nuestro contener aberga 19 item lo sobrante seria 7 item estos item no estariam en la definicion de column/row de la grid, lo que serian grid implicita */
+
+  }
