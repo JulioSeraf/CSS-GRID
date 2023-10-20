@@ -139,3 +139,34 @@ html {
     /* el atajo grid-area no funciona con grids nomeados */
     /* grid-area: No funciona ; */
   }
+
+  .grid-areas{
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-rows: 100px repeat(2, 1fr) 60px;
+    /* se pode definir las ares en una sola linea pero para que quede mejor en leitura los ideal es criar las areas individualmente */
+    grid-template-areas:/* "header header" "content aside" "footer footer" estos es todo en una linea*/
+      "header header"   /* esto es criarlo individualmente*/
+      "content asidebar"
+      "content ." /* Para dejar una area vacia usamos el . en la asgnacion de la area*/
+      "footer footer"
+      ;
+  }
+
+  /* Despues de habelos criados en el grid-template-areas , asignamos las areas criadas a las class a la cual queremos asignar las, con sus respectivos nombres */
+  .header{
+    /* la areas header ocupando 2 column y una row*/
+    grid-area: header;
+  }
+  .content{
+    /* Content ocupando una 1 column y 1 row */
+    grid-area: content;
+  }
+  .asidebar{
+    /* asidebar ocupando 1 column y 1 row */
+    grid-area: asidebar;
+  }
+  .footer{
+    /* footer ocupando 2 column y 1 row */
+    grid-area: footer;
+  }
