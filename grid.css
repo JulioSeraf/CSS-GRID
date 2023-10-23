@@ -281,4 +281,13 @@ html {
     align-self: start;
   }
 
-  
+  .grid-align-tracks{
+    display: grid;
+    /* Grid 3c x 2r */
+    grid-template-columns: repeat(3,200px);
+    grid-template-rows: repeat(2,200px);
+    /* Para alinear los tracks de la grid, usamos el justify-content, lo que lo alinea en el eje X = HORIZONTAL*/
+    justify-content: end;
+    /* Para alinear los tracks en el eje Y = VERTICAL usamos el align-Content */
+    align-content: end;
+  }
