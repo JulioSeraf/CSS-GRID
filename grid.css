@@ -242,3 +242,43 @@ html {
     grid-row: 2/4;
     grid-column: 2/4;
   }
+  .grid-order{
+    display: grid;
+    /* Grid 3c x 2r */
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+  }
+
+  .grid-order .item:nth-child(1){
+    /* Para cambiar las ordenes de los item en grid usamos la misma propriedad que se usa el flex " ORDER" Y como el flex su valor por defecto es 0 , acepta tanto valores positivos como negativos, la orde sera respetada como un z-index el numero maior sempre delante*/
+    order: 1;
+
+  }
+  .grid-order .item:nth-child(2){
+    order: 2;
+  }
+  .grid-order .item:nth-child(5){
+    order: -1;
+  }
+
+  .grid-align{
+    display: grid;
+    /* Grid 3c x 2r */
+    grid-template-columns: repeat(3,200px);
+    grid-template-rows: repeat(2,200px);
+    /* Para aliniear los items en el box grid usamos la propriedad justify-items que tiene como valor por defecto stretch(estirar), lo alinear en eje X = Horizontal*/
+    justify-items: stretch;
+    justify-items: start;
+    /* Para alinear los item en direcciono eje Y = vertical usamos la propriedad align-item, que tiene como valor defecto stretch */
+    align-items: end;
+  }
+
+  .grid-align .item:nth-child(4){
+    /* Para alinear un item en especifico usamos el justify-self para el eje X */
+    justify-self: start;
+
+    /* y el align-self para el eje Y */
+    align-self: start;
+  }
+
+  
