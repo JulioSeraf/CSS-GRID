@@ -308,3 +308,11 @@ html {
     grid-template-columns: repeat(4,minmax(min-content,max-content));
 
   }
+  .grid-repeat{
+    display: grid;
+    /* Grid 4c x 4r */
+    /* podemos usar la fuction repeat para especificar repeticiones de row y column iguales, Importante la esta fuction repeat solo puede ser utilizada em los grid-templates-rows y columns */
+    grid-template-columns: repeat(4,10% 20% 30% 40%);grid-template-columns: repeat(2,10% 20% 30% 40%);
+    grid-template-columns: repeat(1,10% 20% 30% 40%);
+    grid-template-rows: repeat(2,200px 100px);
+  }
