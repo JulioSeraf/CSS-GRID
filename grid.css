@@ -77,7 +77,7 @@ html {
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(4,1fr);
 
-    /* podemos usar el reater par definer en medio de otras medidas */
+    /* podemos usar el reater para definer en medio de otras medidas */
     /* Grid de (4c x 5r) */
     grid-template-columns:20% repeat(2,30%) 20%;
     grid-template-rows:repeat(5,auto);
@@ -197,9 +197,14 @@ html {
     display: grid;
     /* Grid 5c X 4r */
     grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat(4,200px);
+    grid-template-rows: repeat(4,150px);
+    /* al adicionar "dense" en la direcion de las grid en grid-auto-flow, se puede decir que se hace un cambio en el algoritimo de la grid para que se hay espacios vacio las grid se encaje en ellos  */
+    grid-auto-flow: row dense ;
+    grid-auto-flow:column dense;
   }
 
-  .grid-flow-dense .item:nth-child(9){
+  .grid-flow-dense .item:nth-child(11){
     color: cyan;
+    grid-row:span 3;
+    grid-column:span 3;
   }
