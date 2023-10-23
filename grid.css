@@ -316,3 +316,13 @@ html {
     grid-template-columns: repeat(1,10% 20% 30% 40%);
     grid-template-rows: repeat(2,200px 100px);
   }
+
+  .grid-dynamics{
+    display: grid;
+    /* Grid 4c X ? */
+    grid-template-columns: repeat(4,100px);
+    /* auto-fill rellena las grid con tracks(column o row) dependendo si es template-row o column, o sea cria varios templates com 100px neste caso pra q si hay mas item los adapte*/
+    grid-template-columns: repeat(auto-fill,100px);
+    /* auto-fit ajusta la grid con los tracks ejistentes, solo cria los template para los item existentes */
+    grid-template-columns:repeat(auto-fit,100px);
+  }
