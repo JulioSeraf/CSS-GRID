@@ -291,3 +291,20 @@ html {
     /* Para alinear los tracks en el eje Y = VERTICAL usamos el align-Content */
     align-content: end;
   }
+
+  .grid-min-max{
+    display: grid;
+    /* Grid 4c x ? */
+    grid-template-columns: repeat(4,1fr);
+    /*La grid nos a traido alem de las fraciones (fr) como unidad de medida nueva , tbm a traio la propriedad minmax() para definir el valor minimo y maximo que puede tener nuestro elementos grid */
+    grid-template-columns: repeat(4,minmax(100px,200px));
+    /* otro adicionar que a llegado con grid son los valores constante min-content y max-content */
+
+    /* el min-content especifica que el item va diminuir hasta el minimo del contenido dentro del item */
+    grid-template-columns: repeat(4,minmax(min-content,200px));
+    grid-template-columns: repeat(4,minmax(100px,min-content));
+    /* el max-content solo deja el item creser al tamaño del contenido*/
+    grid-template-columns: repeat(4,minmax(max-content,200px));
+    grid-template-columns: repeat(4,minmax(min-content,max-content));
+
+  }
