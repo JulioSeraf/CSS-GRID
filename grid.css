@@ -58,6 +58,11 @@ html {
     background-color: #666;
     border: medium solid #999;
   }
+  .sub-item{
+    padding: 1rem;
+    background-color:#ddd;
+    border :medium solid #ccc;
+  }
   /* Grid Explicito */
   .grid-explicit{
     /* ativamos el grid con el display */
@@ -334,4 +339,35 @@ html {
     /* con auto-fit la grid criara columnas dependendo de lo total de item que contiene la caja grid, al dale minmax(200, 1fr) le decimos que cada grid tera no minimo 200 px y como maximo el espacio restante del contiene, se la grid criada tiene 500px tera 2 columnas pq hay espacio para 2 item de 200 y asi sucecivamente */
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     gap: 1vw 1vh;
+  }
+
+  /* anidacion de grid es cuando un elemento hijo de una grid conteiner tbm puede adiquirir la propriedad grid, y tbn los elementos nietos y asi sucessivamente*/
+
+  /* subgrids es cuando un elemento nieto o bisneto etc.. puede heredar la propriedad grid directamente del elemento father */
+
+  .grid-nested{
+    display: grid;
+    /* Grid 3c x ?r */
+    grid-template-columns: repeat(3,1fr);
+    /* para criar la grid anidada basta con add la class que contiene la config grid al elementeo hijo o cualquer elemento anidado para que sea un elemento grid */
+  }
+  .grid{
+    display: grid;
+    /* Grid 3c x 4r */
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(4,1fr);
+  }
+
+  .sub-grid{
+    /* Para que la caracteristica subGrid funcione es necessario lo seguinte: 
+     passo 1 = Difinir explicitamente el tamaño que ocupara el elemento que aplicara subgrid dentro del contenedor padre grid, es decir definir sus propriedades grid-column y grid-row*/
+     grid-column: span 3;
+     grid-row: 1 3;
+
+     /* passo 2 = aplicar display:grid; al elemento que aplicara subgrid*/
+     display: grid;
+
+     /* passo 3 = aplicar el valor de subgrid a las columns o rows o ambas dependendo de como se requiere */
+     grid-template-columns: subgrid;
+     grid-template-rows: subgrid;
   }
