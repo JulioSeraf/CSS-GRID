@@ -325,4 +325,13 @@ html {
     grid-template-columns: repeat(auto-fill,100px);
     /* auto-fit ajusta la grid con los tracks ejistentes, solo cria los template para los item existentes */
     grid-template-columns:repeat(auto-fit,100px);
+    grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+  }
+
+  .grid-responsive{
+    display: grid;
+    /* con auto-fit la grid criara columnas dependendo de lo total de item que contiene la caja grid, al dale minmax(200, 1fr) le decimos que cada grid tera no minimo 200 px y como maximo el espacio restante del contiene, se la grid criada tiene 500px tera 2 columnas pq hay espacio para 2 item de 200 y asi sucecivamente */
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1vw 1vh;
   }
